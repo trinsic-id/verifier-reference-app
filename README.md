@@ -61,7 +61,7 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 ### Start and use the application
 1. Run with npm.
 `npm start`
-2. Open the web app on [localhost:3000](http://localhost:3000), and fill in the desired passport information.
+2. Open the web app on <a href="http://localhost:3000" target="_blank">localhost:3000</a>, and fill in the desired passport information.
 ![fill in passport](assets/fillPass.png)
 3. Click **ISSUE PASSPORT**.
 4. Using the Trinsic Wallet mobile app, scan the QR code that pops up and accept the offered credential.
