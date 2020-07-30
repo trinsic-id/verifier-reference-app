@@ -5,20 +5,18 @@ const { CredentialsServiceClient, Credentials } = require("@trinsic/service-clie
 require('dotenv').config();
 
 const client = new CredentialsServiceClient(
-    new Credentials(process.env.ACCESSTOK, process.env.SUBKEY),
+    new Credentials(process.env.ACCESSTOK),
     { noRetryPolicy: true });
 
 router.post('/issue', cors(), async function (req, res) {
   let params = {
-    credentialOfferParameters: {
-      definitionId: process.env.CRED_DEF_ID,
-      automaticIssuance: true,
-      credentialValues: {
-        "Full Name": req.body.name,
-        "Address": req.body.address,
-        "Passport Number": req.body.passportNumber,
-        "Date of Birth": req.body.dob,
-      }
+    definitionId: process.env.CRED_DEF_ID,
+    automaticIssuance: true,
+    credentialValues: {
+      "Full Name": req.body.name,
+      "Address": req.body.address,
+      "Passport Number": req.body.passportNumber,
+      "Date of Birth": req.body.dob,
     }
   }
   let result = await client.createCredential(params);

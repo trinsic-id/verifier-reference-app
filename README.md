@@ -31,7 +31,7 @@ In order to provide a passport for the sample, there is also a simple issuer fun
  4. Click the **Continue to Review** button and then click on **Confirm** to create the organization.
     - It might take a few seconds to create the organization. Just wait for it to finish.
  5. Click on the organization tile to go to the Organization View and retrieve the Access Token and Subscription Key from the tile on the right.
- 6. In the .env file, add your organization's Access Token to the `ACCESSTOK` field and the Subscription Key to the `SUBKEY` field.
+ 6. In the .env file, add your organization's Access Token to the `ACCESSTOK` field.
     
 ### Define a credential
  1. Click on the **Credentials** tab on the left sidebar to navigate to the Credentials View.
