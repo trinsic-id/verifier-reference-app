@@ -26,33 +26,39 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 ### Configure your organization
  1. Go to <a href="https://studio.trinsic.id" target="_blank">Trinsic Studio</a> and login or create an account.
  2. Click the **+ Organization** button to slide out the **Add Organization** slider.
- 3. Enter an organization name and make sure that the **Preferred Network** dropdown is set to "Sovrin Staging".
+ 3. Enter an organization name and make sure that the **Select Network** dropdown is set to "Sovrin Staging".
  ![add organization](assets/addOrg.png)
  4. Click the **Continue to Review** button and then click on **Confirm** to create the organization.
     - It might take a few seconds to create the organization. Just wait for it to finish.
- 5. Click on the organization tile to go to the Organization View and retrieve the Access Token and Subscription Key from the tile on the right.
+ 5. Click on the **Details** button on the organization tile to go to the detials view and retrieve the API Key from the tile on the right.
  6. In the .env file, add your organization's Access Token to the `ACCESSTOK` field.
     
 ### Define a credential
- 1. Click on the **Credentials** tab on the left sidebar to navigate to the Credentials View.
- 2. Click on the **+ New credential template** button to slide out the **Create a Credential Template** slider.
- 3. Select the **From existing schema** radio button and enter a Credential Name.
- 4. In the .env file, copy the `SCHEMA_ID` value and paste it into the **Schema ID** text box.
+ 1. Click on the organization tile to bring up the dashboard.
+ 2. Click on the **Credentials** tab on the left sidebar to navigate to the Credentials View.
+ 3. Click on the **Create Template** button using the **New Schema** option.
+ 4. Name the Template "Passport" and add the following values
+     - Full Name
+     - Address
+     - Passport Number
+     - Date of Birth
+
  ![add credential](assets/addCred.png)
- 5. Click the **Create Template** button to define the credential.
-    - It might take a few seconds to define the credential. Just wait for it to finish.
- 6. In the .env file, add the credential's Definition ID to the `CRED_DEF_ID` field.
+
+ 5. Click **Continue to Review** and then **Confirm**.
+ 6. Copy the `Credential Template ID` to the `.env` file under `Credential Definition`.
+ 7. Click on the information icon next to the definition and copy the `Schema ID` to the `.env` file under `Sovrin Stagin Schema`.
  
 ### Define a verification
 1. Click on the **Verifications** tab on the left sidebar to navigate to the Verifications View.
-2. Click on the **+ Create verification template** button to slide out the **Create a Verification Template** slider.
+2. Click on the **Create Template** button to slide out the **Create Verification Template** slider.
 3. Enter a Verification Title.
-4. Click the **+ Policy** button and select "Attribute" to add an Attribute Policy to the verification template.
-5. Enter "passport" as the Policy Name, select "Passport (default)" as the Credential Template, and select both "Full Name" and "Passport Number" as attributes.
+4. Click the **+ Credential Request** button and give it a name.
+5. Enter "passport" as the Policy Name and enter both "Full Name" and "Passport Number" as attributes.
 ![add verification](assets/addVer.png)
-6. Click the **SAVE POLICY** button to create the verification proof.
+6. Click the **Create** button to create the verification proof.
     - It might take a few seconds to define the verification proof. Just wait for it to finish.
-7. In the .env file, add the verification's Verification ID to the `POLICY_ID` field.
+7. In the `.env` file, add the verification's Verification ID to the `POLICY_ID` field.
 8. Your .env file should now be completely filled out.
 ![full .env](assets/fullEnv.png)
 
