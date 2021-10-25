@@ -14,7 +14,7 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 
 ### Download project and install dependencies 
  1. Clone the repository
- `git clone https://github.com/streetcred-id/verifier-reference-app`
+ `git clone https://github.com/trinsic-id/verifier-reference-app.git`
  2. Navigate into the directory
  `cd verifier-reference-app`
  3. Install the dependencies
