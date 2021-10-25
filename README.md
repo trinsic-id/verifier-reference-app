@@ -37,7 +37,7 @@ In order to provide a passport for the sample, there is also a simple issuer fun
  1. Click on the organization tile to bring up the dashboard.
  2. Click on the **Credentials** tab on the left sidebar to navigate to the Credentials View.
  3. Click on the **Create Template** button using the **New Schema** option.
- 4. Name the Template "Passport" and add the following values
+ 4. Name the Template "passport" and add the following values
      - Full Name
      - Address
      - Passport Number
