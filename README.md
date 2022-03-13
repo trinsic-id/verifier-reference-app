@@ -47,7 +47,7 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 
  5. Click **Continue to Review** and then **Confirm**.
  6. Copy the `Credential Template ID` to the `.env` file under `Credential Definition`.
- 7. Click on the information icon next to the definition and copy the `Schema ID` to the `.env` file under `Sovrin Stagin Schema`.
+ 7. Click on the information icon next to the definition and copy the `Schema ID` to the `.env` file under `Sovrin Staging Schema`.
  
 ### Define a verification
 1. Click on the **Verifications** tab on the left sidebar to navigate to the Verifications View.
