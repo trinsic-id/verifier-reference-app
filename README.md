@@ -7,8 +7,8 @@ This sample is to simulate a request of proof of a passport.
 In order to provide a passport for the sample, there is also a simple issuer function that issues a connectionless passport credential.
 
 ## Prerequisites:
-- [npm](https://www.npmjs.com/get-npm)
-- The Trinsic Wallet app. Download the [Android](https://play.google.com/store/apps/details?id=id.streetcred.apps.mobile) or [iOS](https://apps.apple.com/us/app/trinsic-wallet/id1475160728) version for free and set up an account
+- [npm](https://www.npmjs.com/get-npm) - Make sure you have the latest **stable** version;
+- Trinsic Wallet for [Android](https://play.google.com/store/apps/details?id=id.streetcred.apps.mobile) or [iOS](https://apps.apple.com/us/app/trinsic-wallet/id1475160728).
 
 ## Setup 
 
@@ -26,18 +26,18 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 ### Configure your organization
  1. Go to <a href="https://studio.trinsic.id" target="_blank">Trinsic Studio</a> and login or create an account.
  2. Click the **+ Organization** button to slide out the **Add Organization** slider.
- 3. Enter an organization name and make sure that the **Select Network** dropdown is set to "Sovrin Staging".
- ![add organization](assets/addOrg.png)
- 4. Click the **Continue to Review** button and then click on **Confirm** to create the organization.
+ 3. Enter an organization name and make sure to select the Indicio Test Network.
+ 4. Click on **Confirm** to create the organization.
     - It might take a few seconds to create the organization. Just wait for it to finish.
- 5. Click on the **Details** button on the organization tile to go to the detials view and retrieve the API Key from the tile on the right.
- 6. In the .env file, add your organization's Access Token to the `ACCESSTOK` field.
+ 5. Click on the **Details** button associated with the new organization to open the organization details tab.
+![organization view](assets/orgsview.png)
+ 6. In the .env file, add your organization's API Key to the `ACCESSTOK` field.
     
 ### Define a credential
  1. Click on the organization tile to bring up the dashboard.
  2. Click on the **Credentials** tab on the left sidebar to navigate to the Credentials View.
  3. Click on the **Create Template** button using the **New Schema** option.
- 4. Name the Template "passport" and add the following values
+ 4. Name the Template "Passport" and add the following values
      - Full Name
      - Address
      - Passport Number
@@ -47,14 +47,14 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 
  5. Click **Continue to Review** and then **Confirm**.
  6. Copy the `Credential Template ID` to the `.env` file under `Credential Definition`.
- 7. Click on the information icon next to the definition and copy the `Schema ID` to the `.env` file under `Sovrin Staging Schema`.
+ 7. Click on the information icon next to the definition and copy the `Schema ID` to the `.env` file under `Indicio Test Schema`.
  
 ### Define a verification
 1. Click on the **Verifications** tab on the left sidebar to navigate to the Verifications View.
 2. Click on the **Create Template** button to slide out the **Create Verification Template** slider.
-3. Enter a Verification Title.
-4. Click the **+ Credential Request** button and give it a name.
-5. Enter "passport" as the Policy Name and enter both "Full Name" and "Passport Number" as attributes.
+3. Name the Verification "International Plane Ticket".
+4. Click the **+ Credential Request** button and name it "Passport".
+5. Enter both "Full Name" and "Passport Number" as attributes.
 ![add verification](assets/addVer.png)
 6. Click the **Create** button to create the verification proof.
     - It might take a few seconds to define the verification proof. Just wait for it to finish.
@@ -67,9 +67,10 @@ In order to provide a passport for the sample, there is also a simple issuer fun
 ### Start and use the application
 1. Run with npm.
 `npm start`
-2. Open the web app on <a href="http://localhost:3000" target="_blank">localhost:3000</a>, and fill in the desired passport information.
+2. Open the web app on <a href="http://localhost:3000" target="_blank">localhost:3000</a>
+3. Make sure your agent (upper-left on the home tab) and your mobile app (Settings>General>Network) are configured to the Indicio Test Network 
+4. Fill in the desired passport information and click **ISSUE PASSPORT**.
 ![fill in passport](assets/fillPass.png)
-3. Click **ISSUE PASSPORT**.
 4. Using the Trinsic Wallet mobile app, scan the QR code that pops up and accept the offered credential.
 ![issue qr code](assets/issueCode.png)
 5. Close the QR code modal and click **VERIFY PASSPORT** to begin the verification process.
